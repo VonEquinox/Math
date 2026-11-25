@@ -25,15 +25,7 @@ S_n[i,j]=\cos(\pi/n)-\cos((2(i-j)+1)\pi/n),\qquad 0\le i,j<n.
 
 每段都有计算机辅助下界和匹配的精确反射上界。正 25 边形是已完成的首个突破目标；后面的精确值不代表所有中间边数都已决定。
 
-以下完整原始归档**本批尚未收入**：
-
-- `regular-polygons-25-48-exact-certificate.zip`
-- `regular-polygon-59-and-49-free-standalone.zip`
-- `regular-polygon-60-exact-certificate.zip`
-
-本批已收入 `regular-polygons-61-64-exact-certificate.zip`，包含 61–64 的终端证书。其母几何分类仍引用 25–48 包；补齐母包中的五层模板后才能执行它的 `full` 模式。
-
-因此读者不能只用本批附件从头复验上述全部精确结果。当前发布包中的 `R6_S59.md` 是后续论证依赖的说明，不替代正 59 的完整独立证书。
+本仓库收入正 25–48、59、60 的原始精确证书，以及正 61–64 的终端证书。归档较大时按分段保存；运行 `python3 verify_artifacts.py` 可重建并逐字节校验。正 61–64 的完整模式需要同仓库正 25–48 证书中的母几何分类。有关适用范围和各自入口见 [复验指南](REPRODUCIBILITY_ZH.md)。
 
 ## 二、已完成的必要条件，不是精确秩
 

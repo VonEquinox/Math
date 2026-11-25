@@ -2,3 +2,6 @@ replay/
 __pycache__/
 *.pyc
 /artifacts/regular-polygons-49-58-and-local-arc-certificates.zip
+/artifacts/regular-polygons-25-48-exact-certificate.zip
+/artifacts/regular-polygon-59-and-49-free-standalone.zip
+/artifacts/regular-polygon-60-exact-certificate.zip

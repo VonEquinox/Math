@@ -10,9 +10,9 @@ root = Path(__file__).resolve().parent
 for line in (root / 'SHA256SUMS').read_text(encoding='utf-8').splitlines():
     digest, name = line.split('  ', 1)
     path = root / name
-    if not path.exists() and path.name == 'regular-polygons-49-58-and-local-arc-certificates.zip':
-        parts = [Path(str(path) + f'.part{i:02d}') for i in range(2)]
-        if not all(part.is_file() for part in parts):
+    if not path.exists():
+        parts = sorted(path.parent.glob(path.name + '.part[0-9][0-9]'))
+        if not parts or any(part.name != path.name + f'.part{i:02d}' for i, part in enumerate(parts)):
             raise SystemExit(f'Missing one or more archive parts: {name}')
         with NamedTemporaryFile(dir=path.parent, delete=False) as temp:
             pending = Path(temp.name)
