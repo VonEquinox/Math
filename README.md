@@ -43,3 +43,7 @@ python3 verify_artifacts.py
 脚本会自动按顺序拼接传输分段。它只检查 SHA-256、ZIP 完整性和安全解压路径，**不等于数学证明的复验**。数学复验请按复验指南在分别解压的目录中执行。较大的计算需要 C++17、Python 3、gzip 和临时磁盘空间。
 
 本次保留已复验归档的原始字节，未重写历史证明。归档中若出现早期的较弱界，以本仓库索引及明确列出的后续证明为准；尤其正 49 的旧“至少 52 面”已经由全部 52 面分支的排除加强为“至少 53 面”。
+
+## 其他数学研究
+
+- [Constant-width higher-rank numerical ranges need not be disks](docs/HIGHER_RANK_NUMERICAL_RANGE_COUNTEREXAMPLES.md)：反驳 Chien–Li–Nakazato 的高阶数值域等宽猜想，给出两个六阶显式反例（秩三勒洛三角形、秩二解析严格凸曲线）及一般压缩秩推广。纯解析证明，无需数值证书；原创性与外部同行审查尚待完成。
