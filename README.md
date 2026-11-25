@@ -24,6 +24,7 @@
 - [成果与边界说明](docs/RESULTS_ZH.md)：定义、精确结果、尚未解决的范围。
 - [复验指南](docs/REPRODUCIBILITY_ZH.md)：证书入口、依赖、校验层级。
 - [精细矩形覆盖反例的完整证明](docs/RRCB_COUNTEREXAMPLE_ZH.md)。
+- [已核验的反例与适用范围](docs/COUNTEREXAMPLES_ZH.md)：区分文献猜想的反例和仅对特定方法有效的反例。
 - 正 49、正 58 与局部圆弧离线证书 v3（原档 19,854,095 字节）：[第 1 段](artifacts/regular-polygons-49-58-and-local-arc-certificates.zip.part00)、[第 2 段](artifacts/regular-polygons-49-58-and-local-arc-certificates.zip.part01)。克隆仓库后运行下方命令，会合并为字节完全相同的 ZIP 并校验。
 - [正 61–64 边形精确证书](artifacts/regular-polygons-61-64-exact-certificate.zip)（1,863,850 字节）。
 - [精细矩形覆盖反例离线包](artifacts/regular-polygon-RRCB-counterexample.zip)。

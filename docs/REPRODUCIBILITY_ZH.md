@@ -83,4 +83,4 @@ sh CODE/replay_61_64.sh
 
 ## 8. 正 58 的 67 面排除
 
-先单独解压 49 / 58 合集到临时目录，再在同一临时目录叠加解压 artifacts/regular-polygon-58-min68-supplement.zip。补充包含已修正的 min67 可选重建入口及新的 R8_S58_MIN68.md。在叠加目录里运行 sh CODE/r8_general_s58_min68.sh。新终端含两套标号匹配与补面检查；细节和全部母分类入口请看 R8_S58_MIN68.md。
+先单独解压 49 / 58 合集到临时目录，再在同一临时目录叠加解压 artifacts/regular-polygon-58-min68-supplement.zip。补充包含已修正的 min67 可选重建入口及新的 R8_S58_MIN68.md。更新版补上 min68 可选母分类重建的精确筛选：四条缺边构成星形的类型由逐层堆叠论证排除，再枚举其余类型。默认终端命令不变。在叠加目录里运行 sh CODE/r8_general_s58_min68.sh。新终端含两套标号匹配与补面检查；细节和全部母分类入口请看 R8_S58_MIN68.md。
