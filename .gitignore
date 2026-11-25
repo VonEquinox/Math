@@ -1,0 +1,4 @@
+replay/
+__pycache__/
+*.pyc
+/artifacts/regular-polygons-49-58-and-local-arc-certificates.zip

@@ -10,7 +10,8 @@
 |---|---|---|
 | 正 25–32 边形 | 非负秩等于 10 | 结果索引；完整证书不在本批附件 |
 | 正 33–48 边形 | 非负秩等于 11 | 结果索引；完整证书不在本批附件 |
-| 正 59–64 边形 | 非负秩等于 12 | 结果索引；完整证书不在本批附件 |
+| 正 59–60 边形 | 非负秩等于 12 | 结果索引；完整证书不在本批附件 |
+| 正 61–64 边形 | 非负秩等于 12 | 附终端证书；母几何分类依赖另见复验指南 |
 | 正 49 边形 | 六维候选至多两条缺边，且至少 53 个面；包含型十面提升最多共享 31 个原顶点 | 附离线证书 |
 | 正 58 边形 | 六维候选边图完整、至少 67 个面、无交叉多面体顶点图；十面提升的自由标记容量为 32 | 附离线证书 |
 | 局部圆弧 | 任意正多边形网格的 4.71° 圆弧上，十面提升最多保留 32 个指定顶点，且 32 可达 | 附离线证书 |
@@ -23,9 +24,10 @@
 - [成果与边界说明](docs/RESULTS_ZH.md)：定义、精确结果、尚未解决的范围。
 - [复验指南](docs/REPRODUCIBILITY_ZH.md)：证书入口、依赖、校验层级。
 - [精细矩形覆盖反例的完整证明](docs/RRCB_COUNTEREXAMPLE_ZH.md)。
-- [正 49、正 58 与局部圆弧离线证书 v3](artifacts/regular-polygons-49-58-and-local-arc-certificates.zip)（19,854,095 字节）。
+- 正 49、正 58 与局部圆弧离线证书 v3（原档 19,854,095 字节）：[第 1 段](artifacts/regular-polygons-49-58-and-local-arc-certificates.zip.part00)、[第 2 段](artifacts/regular-polygons-49-58-and-local-arc-certificates.zip.part01)。克隆仓库后运行下方命令，会合并为字节完全相同的 ZIP 并校验。
+- [正 61–64 边形精确证书](artifacts/regular-polygons-61-64-exact-certificate.zip)（1,863,850 字节）。
 - [精细矩形覆盖反例离线包](artifacts/regular-polygon-RRCB-counterexample.zip)。
-- [SHA256SUMS](SHA256SUMS)：本批两个原始归档的 SHA-256。
+- [SHA256SUMS](SHA256SUMS)：本批三个原始归档的 SHA-256。
 
 先执行文件完整性检查：
 
