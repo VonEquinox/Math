@@ -8,7 +8,7 @@
 python3 verify_artifacts.py
 ```
 
-程序按顺序拼接必要的传输分段，逐字节核对七个 ZIP 的 SHA-256，并检查各成员的 CRC 和路径。这只是完整性核对，不执行数学证明。
+程序按顺序拼接必要的传输分段，逐字节核对清单中的 ZIP 的 SHA-256，并检查各成员的 CRC 和路径。这只是完整性核对，不执行数学证明。
 
 ## 2. 分别解压
 
@@ -61,7 +61,7 @@ sh CODE/replay_61_64.sh
 
 ## 6. 历史文档与发布边界
 
-- 正 49 / 58 合集是结构性证书选集，不是精确秩的证明；正 25–48、59、60 和 61–64 的证书各自保存。
+- 正 49 / 58 合集是结构性证书选集，不是精确秩的证明；正 25–48、58、59、60 和 61–64 的精确证书各自保存。
 - 个别说明保留了前一阶段的较弱界，以 `README_ZH.md`、`R8_S49_D6_F52_ALL.md` 与 `R8_S58_MIN67.md` 的明确后续结论为准。
 - 归档中的 `OPTIONAL/` 补充命题不是当前精确秩结果的必要组成部分。
 - 某些历史证明引用其他归档的文本或早期几何生成说明。附带的终端数据不是这些论证的替代品；完整依赖应按原证明追溯。
@@ -81,6 +81,39 @@ sh CODE/replay_61_64.sh
 
 各包使用原始安装前提、模板与目录名。进行数学复验时，请采用归档自己的入口，不要在不同包间任意覆盖文件。
 
-## 8. 正 58 的 67 面排除
+## 8. 正 58 的精确值
 
-先单独解压 49 / 58 合集到临时目录，再在同一临时目录叠加解压 artifacts/regular-polygon-58-min68-supplement.zip。补充包含已修正的 min67 可选重建入口及新的 R8_S58_MIN68.md。更新版补上 min68 可选母分类重建的精确筛选：四条缺边构成星形的类型由逐层堆叠论证排除，再枚举其余类型。默认终端命令不变。在叠加目录里运行 sh CODE/r8_general_s58_min68.sh。新终端含两套标号匹配与补面检查；细节和全部母分类入口请看 R8_S58_MIN68.md。
+**结论：正 58 的非负秩为 12。** 早期资料中的“仍是 11 或 12”属于历史记录。新的证书用两份冻结原始档分别处理归约到只余 76 面，以及排除这最后的 76 面；四次反射给出精确匹配的 12 项上界。此结果不是对一般猜想的证伪。
+
+先从仓库根目录运行第 1 步的完整性脚本，把分段恢复为原始 ZIP。此处各份档案是同一研究目录的叠加层，**只对下列这组正 58 证书按照给定顺序解压到同一个新目录**：
+
+```sh
+mkdir -p replay/exact58
+for archive in \
+  regular-polygons-49-58-and-local-arc-certificates.zip \
+  regular-polygon-58-min68-supplement.zip \
+  regular-polygon-58-at-least-71-facets.zip \
+  regular-polygon-58-after71-structure.zip \
+  regular-polygon-58-only76.zip \
+  regular-polygon-58-exact-f76.zip
+do
+  unzip -o "artifacts/$archive" -d replay/exact58
+done
+cd replay/exact58
+```
+
+三份先前的结构性补充填齐 68→70→71 的几何分类和 36 面局部三角形排除。其中 [至少 71 面汇总](../artifacts/regular-polygon-58-at-least-71-facets.zip)含 70 面归约所需的 38 面、32 标记排除数据；[71 面后续结构](../artifacts/regular-polygon-58-after71-structure.zip)含 36 面、31 标记的独立终端。最先叠加的 min68 补充已修复从母分类重建时四缺边星形的排除；其历史默认终端不受影响。正 60 的独立归档提供 51 个母种子覆盖真实 37 种旧多面体的证明背景，请在其自己的目录中阅读 `R8_S60_EXACT.md`（正 58 档已附复跑所用的冻结种子数据）。
+
+在合并后的目录按阶段运行；需要小端 Linux、GNU 工具、C++17、Python 3.10+、gzip、xz：
+
+| 阶段 | 命令 |
+|---|---|
+| 早期完整边图、32 个自由标记上限、排除交叉顶点图 | `sh CODE/r8_general_s58_free32.sh` 和 `sh CODE/r8_general_s58_nocross.sh`，阅读 `R8_S58_COMPLETE_GRAPH.md` |
+| 早期 67、68、70、71 面界 | 依次 `sh CODE/r8_general_s58_min67.sh`、`sh CODE/r8_general_s58_min68.sh`、`sh CODE/r8_general_s58_min70.sh`、`sh CODE/r8_general_s58_min71.sh` |
+| 后续 36 面、31 标记的三角形缺边排除 | `sh CODE/r8_general_s58_after71.sh` |
+| 75 面若可行则需要 40 面、32 标记的局部图型 | `sh CODE/r8_general_s58_f75.sh` |
+| 正 58 排除全部 40 面、32 标记局部图型 | `sh CODE/r9_general_s58_min76.sh` |
+| 直接排除 77 面 | `sh CODE/r9_general_s58_f77.sh` |
+| 排除最后的 76 面，核验 12 项上界 | `sh CODE/r9_general_s58_e1.sh` |
+
+阅读 `R9_S58_ONLY76.md` 与 `R9_S58_EXACT.md` 了解各有限覆盖的完备性与假设。末行默认使用冻结目录；`--horizon` 从 51 种母种子重建可见面候选并做逐个精确同构核对，`--marked` 重建实际正规网格标记，`--full` 两者都做。77 面入口默认逐行核验冻结的 42,099 型有理实现目录；只有从作者原始坐标额外重建目录的可选 `--full <坐标文件.xz>` 需要另取来源文件和 GMP（见 `R8_S58_E0_HITTINGSET.md`），不影响常规离线复验。各层内部均区分有限枚举、精确算术终端和数学归约，零容差才可排除候选；仅验末端不能代替全证据链。
