@@ -56,3 +56,7 @@ python3 code/verify_method_counterexamples.py
 ```
 
 [核验脚本](../code/verify_method_counterexamples.py)只用标准库；第 3 项采用严格有理三角区间，第 4 项逐格检查等变覆盖。第 4 项真分解的下界是上面的证明，不由覆盖程序判断。第 1 项独立核验见其离线包。第 2、5 项的完整证明入口随正 25–48 档案公布。
+
+## 后续方法限制与真正反例的区别（2026-11-27）
+
+稳定角窗传递定理表明：如果 $u(33)\le10$，则存在无穷多个真实完整正多边形违反候选公式。但截至 22:00 尚无该种子，不能宣称已证伪原猜想。完整规则表间的对数补项障碍、特定镜像改权条件的刚性反例、有限的低秩接口分类，也只排除对应证明机制。详见[一般理论总览](../research/regular-polygons/README.md)及[传递证明](../research/regular-polygons/STABLE_WINDOW_TRANSFER.md)。
