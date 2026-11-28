@@ -8,7 +8,7 @@ Engel–Kalinowski–Schymura 的猜想 1 断言两者恒等。对正多边形�
 
 | 边数 $n$ | 独立核验的不等式 |
 |---|---|
-| $\binom{206}{103}$ | $\operatorname{RRCB}(S_n)\le296<297\le\operatorname{rank}_+(S_n)$ |
+| $\binom{206}{103}$ | $\operatorname{RRCB}(S_n)\le296<299\le\operatorname{rank}_+(S_n)$（[加强证明](../research/regular-polygons/updates/RRCB_RANK_BALANCE_ZH.md)） |
 | $\binom{256}{128}$ | $\operatorname{RRCB}(S_n)\le366<369\le\operatorname{rank}_+(S_n)$ |
 
 见[完整证明](RRCB_COUNTEREXAMPLE_ZH.md)与[离线核验包](../artifacts/regular-polygon-RRCB-counterexample.zip)。两个例子都用确定性双重覆盖与有界提升的顶点数上界；没有算出这两个大矩阵的精确非负秩。另一个更强的定性结论对任意凸多边形成立：RRCB 为 $\log_2 n+O(\log\log n)$，比非负秩的通用下界主项系数严格小。完整渐近证明已随正 25–48 档案发布，解压后见 `R4_REFINED_COVER_ASYMPTOTIC.md`。
@@ -17,7 +17,7 @@ Engel–Kalinowski–Schymura 的猜想 1 断言两者恒等。对正多边形�
 
 记 $M_r$ 为至多 $r$ 面扩展能够投影出的凸多边形最大顶点数。存在有理的**不规则**凸多边形见证，使得对每个 $k\ge0$，
 $M_{8+2k}\ge17\cdot2^k>16\cdot2^k$ 且 $M_{9+2k}\ge26\cdot2^k>24\cdot2^k$。
-右侧是相应面数下正多边形的猜想阶跃。还有一个有理不规则 36 边形只需 10 面，对照正 36 边形的精确非负秩 11。
+右侧是相应面数下正多边形的猜想阶跃。另有一个只需 10 面的有理不规则 36 边形。旧档声称正 36 边形的非负秩为 11；该正形的完整覆盖链按[当前口径](../research/regular-polygons/updates/README.md)仍待独立复审。
 
 这些见证反驳“普适最大影子顶点数等于正多边形猜想阶跃”的假设，不反驳限定为正多边形的猜想。已随正 25–48 档案发布，解压后见 `R4_SHADOW_METRIC_BARRIER.md`、`R3_IRREGULAR_26.md` 及所列脚本。
 
